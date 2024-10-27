@@ -3,14 +3,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.20.0/firebas
 import { getDatabase, ref, set, push } from 'https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDSGRbyK0KHzl5dFVclAijz38WOPVp6zzk",
-  authDomain: "jishithmp.firebaseapp.com",
-  databaseURL: "https://jishithmp-default-rtdb.firebaseio.com",
-  projectId: "jishithmp",
-  storageBucket: "jishithmp.appspot.com",
-  messagingSenderId: "216632630778",
-  appId: "1:216632630778:web:0ede9849b2ca2b44ef1843",
-  measurementId: "G-1VZTLF0N3Y"
+  //removed for security concern 
 };
 
 // Initialize Firebase
