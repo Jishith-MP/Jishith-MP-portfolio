@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="eng" dir="ltr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Jishith MP Portfolio</title>
+		<meta name="description" content="I'm a frontend developer creating seamless, feature-rich, and responsive websites using HTML, CSS, JavaScript, and various libraries.">
+ <meta name="keywords" content="frontend developer, HTML, CSS, JavaScript, Vue.js, React, Bootstrap, jQuery, web developer, responsive design, portfolio, modern web development, UI/UX, Firebase">
+		<meta property="og:title" content="Jishith MP | Frontend Developer Portfolio">
+ <meta property="og:description" content="I'm a frontend developer creating seamless, feature-rich, and responsive websites using HTML, CSS, JavaScript, and various libraries.">
+ <meta property="og:url" content="https://jishithmp.web.app">
+ <meta property="og:type" content="website">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Jishith MP | Frontend Developer Portfolio">
+ <meta name="twitter:description" content="I'm a frontend developer creating seamless, feature-rich, and responsive websites using HTML, CSS, JavaScript, and various libraries.">
+		<meta name="robots" content="index, follow">
+ <meta name="author" content="Jishith MP">
+ <meta name="theme-color" content="#cd5b45"> 
+		<meta name="google-site-verification" content="L6l0FvuHNkH7Oe_0PDD1MOOMMqx8VMF6yfXs9wqxNc8" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <meta name="mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <link rel="icon" href="assets/images/favicon-16x16.png" type="image/png" sizes="16x16">
+ <link rel="icon" href="assets/images/favicon-32×32.png" type="image/png" sizes="32x32">
+ <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+ <link rel="icon" sizes="192x192" href="assets/images/android-chrome-192x192.zip">
+ <link rel="icon" sizes="512x512" href="assets/images/android-chrome-512x512.png">
+		<link rel="canonical" href="https://jishithmp.firebaseapp.com">
+		<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+ <link rel="stylesheet" href="animate.css/animate.min.css">
+		<link rel="stylesheet" href="assets/styles/style.css" />
+		<link rel="stylesheet" href="assets/styles/style1.css" />
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/10.12.2/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/10.12.2/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/10.12.2/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/10.12.2/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/10.12.2/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/10.12.2/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/10.12.2/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/10.12.2/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/10.12.2/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/10.12.2/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  </head>
+
+  	<body class="body-dark">
+		<div id="app">
+			<header class="text-center">
+				<div class="row align-items-center">
+					<div class="col-2 d-flex justify-content-start align-items-center">
+						<h1 style="margin-top: 10px;">Jishith</h1>
+					</div>
+
+					<div class="col-10 d-flex justify-content-end">
+						<img v-on:click="showAside" id="hamburger" class="hamburger d-block d-md-none imgTheme img" src="assets/svgs/hamburger-menu.svg" alt="hamburger-menu" />
+
+						<nav class="d-none d-md-flex justify-content-end">
+							<ul class="nav">
+								<li class="nav-item">
+									<a class="nav-link" href="#home">Home</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#aboutMe">About</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#skills">Skills</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#projects">Projects</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#education">Education</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#certificate">Certificate</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#contactme">Contact me</a>
+								</li>
+								<li class="nav-iem">
+									<label for="switch1" class="switch">
+										<input class="switcha" id="switch1" type="checkbox" />
+										<span class="slider"></span>
+										<span class="decoration"></span>
+									</label>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</header>
+
+			<aside class="d-none aside-dark" id="nav">
+				<div class="items-container">
+					<a v-on:click="asideClick()" href="#home">Home</a>
+					<hr />
+					<a v-on:click="asideClick()" href="#aboutMe">About</a>
+					<hr />
+					<a v-on:click="asideClick()" href="#skills">Skills</a>
+					<hr />
+					<a v-on:click="asideClick()" href="#projects">Projects</a>
+					<hr />
+					<a v-on:click="asideClick()" href="#education">Education</a>
+					<hr />
+					<a v-on:click="asideClick()" href="#certificate">Certificat </a>
+					<hr />
+					<a v-on:click="asideClick()" href="#contactme">ContactMe</a>
+					<hr />
+				</div>
+				<button v-on:click="hideAside" id="closeNav" aria-label="Close navigation">
+					<img class="img imgTheme" src="assets/svgs/close.svg" alt="Close menu icon" />
+				</button>
+				<label for="switch2" class="switch check">
+					<input class="switcha" id="switch2" type="checkbox" />
+					<span class="slider"></span>
+					<span class="decoration"></span>
+				</label>
+			</aside>
+
+			<main>
+				<div class="profile container" id="home">
+					<p class="text-center animate__animated animate__fadeInDown">-Hello</p>
+					<p v-html="name" class="display-4 text-center animate__animated animate__fadeInDown"></p>
+					<p class="text-center animate__animated animate__fadeInDown">{{ title }}</p>
+
+					<div class="profile-grid d-flex">
+						<div class="left-col d-flex flex-column justify-content-center">
+							<p class="lead text-center animate__animated animate__slideInLeft d-block d-sm-none">{{ details }}</p>
+							<p class="lead text-center animate__animated animate__slideInLeft d-none d-sm-block f-md-none">{{ detailsPc }}</p>
+							<div class="contact d-flex justify-content-center mt-3 animate__animated animate__slideInLeft">
+								<a href="https://www.facebook.com/jishnu.appu.73744" target="_blank" class="hover-btn">
+									<img src="assets/svgs/Facebook.svg" alt="Facebook" class="me-2" />
+								</a>
+								<a href="https://www.instagram.com/ji_shith?igsh=eW8xZXA4ZHZnYXRi" target="_blank" class="hover-btn">
+									<img src="assets/svgs/Instagram.svg" alt="Instagram" class="me-2" />
+								</a>
+								<a href="https://github.com/Jishith-MP" target="_blank" class="hover-btn">
+									<img src="assets/svgs/git.svg" alt="GitHub" class="me-2" />
+								</a>
+								<a href="mailto: jishithmp534@gmail.com" class="hover-btn">
+									<img src="assets/svgs/email.svg" alt="Email" />
+								</a>
+							</div>
+						</div>
+						<div class="right-col d-flex justify-content-start align-items-center">
+							<img id="avatar" class="animate__animated animate__zoomIn avatar" src="assets/images/avatar_blue.png" alt="Avatar" />
+						</div>
+					</div>
+
+					<div class="details-grid">
+						<p class="animate__animated animate__slideInLeft">{{ sub_details }}</p>
+					</div>
+					<a href="#projects">
+						<button class="btn btn-outline-warning animate__animated animate__slideInLeft y-btn" id="explore" type="button">Explore My Work <img src="assets/svgs/arrow.svg" alt="Arrow icon" class="imgTheme img" /></button>
+					</a>
+				</div>
+
+				<div class="hidden-element aboutMe container" id="aboutMe" data-animation="animate__fadeInRight">
+					<p class="text-center main-head-style">About <span>Me</span></p>
+					<div class="row align-items-center">
+						<img src="assets/images/img.webp" alt="Me" class="col-3 d-none d-md-block person-img" />
+						<p v-html="aboutme_discription" class="col-md-8"></p>
+					</div>
+				</div>
+				<div class="custom-hr container"></div>
+
+				<div class="skills container mt-20" id="skills">
+					<div class="web hidden-element" data-animation="animate__slideInLeft">
+						<p class="text-center main-head-style"><span>My</span>Skills</p>
+						<h3>Web Development</h3>
+
+						<div class="html d-flex align-items-center row">
+							<img class="col-2 img-fluid mx-auto" src="assets/images/html.png" alt="html.png" />
+							<p class="col-4 mb-0 text-start" data-bs-toggle="tooltip" data-bs-title="6/7">HTML</p>
+							<div class="dots col-6"></div>
+						</div>
+
+						<div class="css d-flex align-items-center row">
+							<img class="col-2 img-fluid mx-auto" src="assets/images/css.png" alt="css.png" />
+							<p class="col-4 mb-0 text-start" data-bs-toggle="tooltip" data-bs-title="6/7">CSS</p>
+							<div class="dots col-6"></div>
+						</div>
+
+						<div class="js d-flex align-items-center row">
+							<img class="col-2 img-fluid mx-auto" src="assets/images/js.png" alt="js.png" />
+							<p class="col-4 mb-0 text-start" data-bs-toggle="tooltip" data-bs-title="4/7">JavaScript</p>
+							<div class="dots col-6"></div>
+						</div>
+
+						<div class="react d-flex align-items-center row">
+							<img class="col-2 img-fluid mx-auto" src="assets/images/reactjs.png" alt="reactjs.png" />
+							<p class="col-4 mb-0 text-start" data-bs-toggle="tooltip" data-bs-title="3/7">ReactJS</p>
+							<div class="dots col-6"></div>
+						</div>
+
+						<div class="bootstrap d-flex align-items-center row">
+							<img class="col-2 img-fluid mx-auto" src="assets/images/bootstrap.png" alt="bootstrap.png" />
+							<p class="col-4 mb-0 text-start" data-bs-toggle="tooltip" data-bs-title="6/7">Bootstrap</p>
+							<div class="dots col-6"></div>
+						</div>
+
+						<div class="vue d-flex align-items-center row">
+							<img class="col-2 img-fluid mx-auto" src="assets/images/vuejs.png" alt="vuejs.png" />
+							<p class="col-4 mb-0 text-start" data-bs-toggle="tooltip" data-bs-title="5/7">VueJS</p>
+							<div class="dots col-6"></div>
+						</div>
+					</div>
+
+					<div class="lang hidden-element" data-animation="animate__slideInLeft">
+						<h3>Languages</h3>
+
+						<div class="mal d-flex align-items-center row">
+							<img class="dark-theme-img col-2 img-fluid mx-auto theme-img" src="assets/images/malayalam.png" alt="malayalam.png" />
+							<p class="col-4 mb-0 text-start">Malayalam</p>
+							<div class="dots col-6"></div>
+						</div>
+
+						<div class="eng d-flex align-items-center row">
+							<img class="col-2 img-fluid mx-auto" src="assets/images/english.png" alt="english.png" />
+							<p class="col-4 mb-0 text-start">English</p>
+							<div class="dots col-6"></div>
+						</div>
+
+						<div class="hindi d-flex align-items-center row">
+							<img class="dark-theme-img col-2 img-fluid mx-auto theme-img" src="assets/images/hindi.png" alt="hindi.png" />
+							<p class="col-4 mb-0 text-start">Hindi</p>
+							<div class="dots col-6"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="border-md theme-dark-projects projects container" id="projects">
+					<p class="text-center hidden-element main-head-style" data-animation="animate__zoomIn"><span>My</span>Works</p>
+					<p class="text-center hidden-element" data-animation="animate__zoomIn">{{ work_discription }}</p>
+
+					<div class="slider-container custom-margin hidden-element" data-animation="animate__slideInLeft">
+						<div class="slider">
+							<div class="slider-item left2">
+								<img class="slider-img" src="assets/images/random.jpg" alt="Random Color generator" />
+								<div class="overlay-display">
+									<p class="overlay-text overlay1">{{ project_name1 }}</p>
+									<p class="overlay-text overlay2">
+										{{ project_description1 }}
+										<span>Strength - &#9733; &nbsp; &#9733; &nbsp; &#9734; &nbsp; &#9734; &nbsp; &#9734;</span>
+									</p>
+									<div class="image-buttons">
+										<button class="image-button" v-on:click="redirectUrl('https://github.com/Jishith-MP/Random-bg-color-generator.git')">
+											<img class="gitBtn" src="assets/svgs/git.svg" alt="git" />
+										</button>
+										<button class="image-button" v-on:click="redirectUrl('notavailable.html')">
+											<img class="urlBtn" src="assets/svgs/arrow-right-down.svg" alt="arrow" />
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<div class="slider-item left1">
+								<img class="slider-img" src="assets/images/swift.jpg" alt="SwiftAI" />
+								<div class="overlay-display">
+									<p class="overlay-text overlay1">{{ project_name2 }}</p>
+									<p class="overlay-text overlay2">
+										{{ project_description2 }} <br />
+										<span>Strength - &#9733; &nbsp; &#9733; &nbsp; &#9733; &nbsp; &#9734; &nbsp; &#9734;</span>
+									</p>
+									<div class="image-buttons">
+										<button class="image-button" v-on:click="redirectUrl('https://github.com/Jishith-MP/SwiftAI.git')">
+											<img class="gitBtn" src="assets/svgs/git.svg" alt="git" />
+										</button>
+										<button class="image-button" v-on:click="redirectUrl('notavailable.html')">
+											<img class="urlBtn" src="assets/svgs/arrow-right-down.svg" alt="arrow" />
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<div class="slider-item center">
+								<img class="slider-img" src="assets/images/cloneai.jpg" alt="CloneAI" />
+								<div class="overlay-display">
+									<p class="overlay-text overlay1">{{ project_name3 }}</p>
+									<p class="overlay-text overlay2">
+										{{ project_description3 }}
+										<br />
+										<span>Strength - &#9733; &nbsp; &#9733; &nbsp; &#9733; &nbsp; &#9733; &nbsp; &#9733;</span>
+									</p>
+									<div class="image-buttons">
+										<button class="image-button" v-on:click="redirectUrl('https://github.com/Jishith-MP/Clone-AI.git')">
+											<img class="gitBtn" src="assets/svgs/git.svg" alt="git" />
+										</button>
+										<button class="image-button" v-on:click="redirectUrl('https://cloneai-com.web.app')">
+											<img class="urlBtn" src="assets/svgs/arrow-right-down.svg" alt="arrow" />
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<div class="slider-item right1">
+								<img class="slider-img" src="assets/images/pookkalam.jpg" alt="pookkalam" />
+								<div class="overlay-display">
+									<p class="overlay-text overlay1">{{ project_name4 }}</p>
+									<p class="overlay-text overlay2">
+										{{ project_description4 }}
+										<span>Strength - &#9733; &nbsp; &#9733; &nbsp; &#9733; &nbsp; &#9733; &nbsp; &#9733;</span>
+									</p>
+									<div class="image-buttons">
+										<button class="image-button" v-on:click="redirectUrl('https://github.com/Jishith-MP/Onam-pookkalam.git')">
+											<img class="gitBtn" src="assets/svgs/git.svg" alt="git" />
+										</button>
+										<button class="image-button" v-on:click="redirectUrl('notavailable.html')">
+											<img class="urlBtn" src="assets/svgs/arrow-right-down.svg" alt="arrow" />
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<div class="slider-item right2">
+								<img class="slider-img" src="assets/images/pscphotopro.jpg" alt="PSCphotopro" />
+								<div class="overlay-display">
+									<p class="overlay-text overlay1">{{ project_name5 }}</p>
+									<p class="overlay-text overlay2">
+										{{ project_description5 }}
+										<span>Strength - &#9733; &nbsp; &#9733; &nbsp; &#9733; &nbsp; &#9733; &nbsp; &#9734;</span>
+									</p>
+									<div class="image-buttons">
+										<button class="image-button" v-on:click="redirectUrl('https://github.com/Jishith-MP/PSCphotopro.git')">
+											<img class="gitBtn" src="assets/svgs/git.svg" alt="git" />
+										</button>
+										<button class="image-button" v-on:click="redirectUrl('https://PSCphotoproo.web.app')">
+											<img class="urlBtn" src="assets/svgs/arrow-right-down.svg" alt="arrow" />
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="button-container">
+							<button class="button" v-on:click="slideLeft()">
+								<img src="assets/svgs/left-arrow.svg" alt="left-arrow.svg" />
+							</button>
+							<button class="button" v-on:click="slideRight()">
+								<img src="assets/svgs/left-arrow.svg" alt="right-arrow.svg" />
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<section class="education conatiner" id="education">
+					<div class="edu-head d-flex flex-row justify-content-center align-items-center text-center hidden-element mb-0 gap-2" data-animation="animate__bounceIn">
+						<img src="assets/svgs/education.svg" alt="education_icon" class="mb-2 imgTheme img" />
+						<p class="text-center ml-2 main-head-style">Education</p>
+					</div>
+
+					<div class="edu-box hidden-element" data-animation="animate__zoomInLeft">
+						<p class="text-center">{{ edu_discription }}</p>
+						<div class="edu-grid">
+							<div class="edu edu-dark-theme education1 row align-items-center">
+								<img src="assets/images/coc.png" alt="coc" class="col-5" />
+								<div class="education1-col2 row col-7 d-flex flex-column text-start">
+									<p class="eduName">{{ edu1_courseName }}</p>
+									<p class="edu-institution">{{ edu1_institutionName }}</p>
+									<p class="edu-completed" v-html="edu1_completedYearAndStatus"></p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+
+						<div class="edu-grid hidden-element" data-animation="animate__zoomInRight">
+							<div class="edu education2 row align-items-center">
+								<img src="assets/images/aroli.jpg" alt="aroli school" class="col-5" />
+								<div class="education2-col2 row col-7 d-flex flex-column text-start">
+									<p class="eduName">{{ edu2_courseName }}</p>
+									<p class="edu-institution">{{ edu2_institutionName }}</p>
+									<p class="edu-completed" v-html="edu2_completedYearAndStatus"></p>
+									<p>{{ edu2_role }}</p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+
+						<div class="edu-grid hidden-element" data-animation="animate__zoomInLeft">
+							<div class="edu education3 row align-items-center">
+								<img src="assets/images/pallikunnu.jpg" alt="pallikunnu school" class="col-5" />
+								<div class="education3-col2 row col-7 d-flex flex-column text-start">
+									<p class="eduName">{{ edu3_courseName }}</p>
+									<p class="edu-institution">{{ edu3_institutionName }}</p>
+									<p class="edu-completed" v-html="edu3_completedYearAndStatus"></p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="dark-theme-cer certificate conatiner" id="certificate">
+					<div class="d-flex flex-column justify-content-center align-items-center text-center">
+						<div class="d-flex justify-content-center align-items-center flex-row gap-2 mb-5">
+							<img src="assets/svgs/certificate.svg" alt="certificate_icon" class="imgTheme img" />
+							<p class="main-head-style mb-0 hidden-element" data-animation="animate__bounceInLeft"><span>My</span>Certificates</p>
+						</div>
+
+						<div class="certificate-grid row">
+							<div class="col-12 col-md-6 d-flex flex-column p-3 hidden-element" data-animation="animate__zoomInLeft">
+								<div class="row certificate-card">
+									<div class="col-3 d-flex align-items-center">
+										<img src="assets/images/nss.png" alt="NSS Icon" class="img-fluid" />
+									</div>
+									<div class="col-9 d-flex flex-column text-start">
+										<h4 style="color: gold;">{{ c1_certificate_Name }}</h4>
+										<p>{{ c1_certificate_discription }}</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-12 col-md-6 d-flex flex-column p-3 hidden-element" data-animation="animate__zoomInRight">
+								<div class="row certificate-card">
+									<div class="col-3 d-flex align-items-center">
+										<img src="assets/images/webdevelopment.png" alt="Web Development Certificate Icon" class="img-fluid" />
+									</div>
+									<div class="col-9 d-flex flex-column text-start">
+										<h4 style="color: gold;">{{ c2_certificate_name }}</h4>
+										<p>{{ c2_certificate_discription }}</p>
+										<a href="assets/pdf/Jishith MP - Certificate UI.pdf" download>
+											<button class="upcode-certificate-btn">Download certificate</button>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<div class="container" id="contactme">
+					<form type="submit" id="formContainer" class="m-auto">
+						<p class="main-head-style mb-4 mt-4 text-center">Contact <span>Me</span></p>
+						<div id="popup" class="mb-3 mt-3 d-none col-12 col-md-8 p-2"></div>
+						<div class="row g-2 mb-0 justify-content-center">
+							<div class="col-6 col-md-4 hidden-element" data-animation="animate__flipInX">
+								<div class="form-floating mb-3">
+									<input type="text" class="form-control dark-input" id="floatingInput" maxlength="25" minlength="2" placeholder="." required />
+									<label class="dark-input-label" for="floatingInput">Name</label>
+								</div>
+							</div>
+							<div class="col-6 col-md-4 hidden-element" data-animation="animate__flipInX">
+								<div class="form-floating">
+									<input type="email" class="form-control dark-input" id="floatingEmail" placeholder="." maxlength="40" required />
+									<label class="dark-input-label" for="floatingEmail">Email</label>
+								</div>
+							</div>
+						</div>
+						<div class="row g-2 justify-content-center hidden-element" data-animation="animate__flipInY">
+							<div class="col-12 col-md-8">
+								<div class="mb-2">
+									<textarea class="form-control dark-input" id="textarea" placeholder="Message..." maxlength="400" minlength="10" rows="5" required></textarea>
+								</div>
+							</div>
+							<br />
+							<button type="submit" class="btn y-btn btn-outline-warning g2 col-12 col-md-8 mb-5">Submit</button>
+						</div>
+					</form>
+				</div>
+
+				<button id="backToTopBtn" class="d-none">
+					<img src="assets/svgs/left-arrow.svg" alt="top-arrow svg" />
+				</button>
+				<button class="contactBtn d-none" onclick="window.location.href = '#contactme'">
+					<img src="assets/svgs/contact.svg" alt="contact.svg" />
+				</button>
+			</main>
+
+			<footer>
+				<h1 class="text-center mb-3">Get in Touch</h1>
+				<div class="row">
+					<div class="d-flex justify-content-evenly align-items-center col-md-7 mx-auto">
+						<a href="https://github.com/Jishith-MP" target="_blank">
+							<img class="bTn" src="assets/svgs/git.svg" alt="github" />
+						</a>
+						<a href="https://www.facebook.com/jishnu.appu.73744" target="_blank">
+							<img class="bTn" src="assets/svgs/Facebook.svg" alt="Facebook" />
+						</a>
+						<a href="https://www.instagram.com/ji_shith?igsh=eW8xZXA4ZHZnYXRi" target="_blank">
+							<img class="bTn" src="assets/svgs/Instagram.svg" alt="Instagram" />
+						</a>
+						<a href="mailto: jishithmp534@gmail.com" target="_blank">
+							<img class="bTn" src="assets/svgs/email.svg" alt="email" />
+						</a>
+						<a href="https://www.linkedin.com/in/jishith-mp-4a6b93248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+							<img class="bTn" src="assets/svgs/linkedin.svg" alt="LinkedIn" />
+						</a>
+					</div>
+				</div>
+				<div class="row footer-grid-one">
+					<div class="col-12 col-md-4 text-start mt-3 mt-md-0">
+						<h3>Conatct Me</h3>
+						<ul>
+							<li>Email: <a href="mailto: jishithmp534@gmail.com">jishithmp534@gmail.com</a></li>
+							<li>Ph: <a href="tel:+917736836677">+917736836677</a></li>
+							<li>Address: Keecheri kunnu, kannur, kerala-670561</li>
+							<li>Get in Touch</li>
+							<li>*Optimized animations across devices for a seamless user experience</li>
+						</ul>
+					</div>
+					<div class="col-12 col-md-4 text-start mt-3 mt-md-0">
+						<h3>Site map</h3>
+						<ul>
+							<li><a href="#home">#Home</a></li>
+							<li><a href="#aboutMe">#About</a></li>
+							<li><a href="#skills">#Skills</a></li>
+							<li><a href="#projects">#Projects</a></li>
+							<li><a href="#education">#Education</a></li>
+							<li><a href="#certificate">#Certificate</a></li>
+							<li><a href="#contactme">#ContactMe</a></li>
+						</ul>
+					</div>
+					<div class="col-12 col-md-4 text-start mt-4 mt-md-0">
+						<h3>Projects</h3>
+						<ul>
+							<li><a href="https://cloneai-com.web.app" target="_blank">Clone AI</a></li>
+							<li><a href="notavailable.html" target="_blank">Frontend code generator</a></li>
+							<li><a href="https://pscphotoproo.web.app">PSCphotopro</a></li>
+							<li><a href="notavailable.html" target="_blank">Random color generator</a></li>
+							<li><a href="notavailable.html" target="_blank">2024 onam pookkalam coding</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row mt-2">
+					<div class="col-6 text-start">
+						<h2>JISHITH MP</h2>
+						<p>Last updated: 25 oct 2024, 10:30 PM IST</p>
+					</div>
+					<div class="col-6 text-end">
+						<p>&copy; 2024 All right reserved</p>
+					</div>
+				</div>
+				<h4 class="lead text-center mt-3"><a href="privacyandpolicy.html">Privacy and Policy</a></h4>
+			</footer>
+		</div>
+
+ <script src="jquery/jquery.min.js"></script>
+ <script src="vue/vue.global.prod.js"></script>
+ <script src="bootstrap/bootstrap.bundle.min.js"></script>
+		<script src="assets/script/script.js"></script>
+		<script src="assets/script/observer.js"></script>
+		<script src="assets/script/dots.js"></script>
+		<script src="assets/script/slider.js"></script>
+		<script src="assets/script/buttons.js"></script>
+		<script src="assets/script/optimiseAnimation.js"></script>
+		<script src="assets/script/themes_switch.js"></script>
+		<script src="assets/script/shirtcolor.js"></script>
+		<script>
+      $('[data-bs-toggle="tooltip"]').each(function() {
+      new bootstrap.Tooltip(this);
+      });
+		</script>
+		<script type="module" src="assets/script/script2.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
+</html>
