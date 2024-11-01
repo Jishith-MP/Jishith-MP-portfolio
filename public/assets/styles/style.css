@@ -48,6 +48,15 @@ body {
   background-color: white;
 }
 
+<<<<<<< HEAD
+=======
+canvas {
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  position: fixed;
+}
+>>>>>>> fdc4d60 (Update portfolio with new features and fixes for v1.1)
 .theme-white-projects {
   background-color: #add8e6;
 }
@@ -117,6 +126,13 @@ h1 {
   margin: 0;
 }
 
+<<<<<<< HEAD
+=======
+main {
+  z-index: 2;
+}
+
+>>>>>>> fdc4d60 (Update portfolio with new features and fixes for v1.1)
 .nav-link {
   opacity: 0.6;
   color: white;
@@ -140,7 +156,11 @@ aside {
   width: 100%;
   height: calc(97vh - 65px);
   position: fixed;
+<<<<<<< HEAD
   z-index: 2;
+=======
+  z-index: 15;
+>>>>>>> fdc4d60 (Update portfolio with new features and fixes for v1.1)
   top: 70px;
   overflow-y: auto;
 }
@@ -405,6 +425,10 @@ nav li {
 
 #app {
   overflow-x: hidden;
+<<<<<<< HEAD
+=======
+  z-index: 2;
+>>>>>>> fdc4d60 (Update portfolio with new features and fixes for v1.1)
 }
 
 .responsive-gap {
